@@ -1,0 +1,33 @@
+<%- include('../includes/head'); %>
+<link rel="stylesheet" href="/static/index.css">
+</head>
+
+<body>
+    <%- include('../includes/navbar'); %>
+    <main class="main-container">
+        
+
+        <% if(!post.length==0){ %>
+        <% post.forEach(p=>{ %>
+        <div class="card">
+            <div class="card__image">
+                <img src="/<%= p.author.imageUrl %>" alt="user image" width="120px" height="120px">
+            </div>
+            <div class="card__data">
+                <h3 class="card__header"><a href="/detail/<%=p._id%>"><%= p.title %> </a></h3>
+                <hr>
+                <p class="card__content"><%= p.content %> </p>
+                <div class="card__footer">
+                    <p>Posted by <%= p.author.name %> on <%= p.date %> </p>
+                </div>
+            </div>
+        </div>
+    
+        <% }) %>
+    </main>
+        <% } else{%>
+
+        <h1 style="color: white;" class="centered">no post</h1>
+
+        <% } %>
+    <%- include('../includes/end'); %>

@@ -1,0 +1,67 @@
+<%- include('../includes/head'); %>
+<link rel="stylesheet" href="/static/index.css">
+<link rel="stylesheet" href="/static/details.css">
+</head>
+
+<body>
+    <%- include('../includes/navbar'); %>
+    <main class="main-container">
+    <%- include('../includes/flash'); %>
+        <div class="card">
+            <div class="card__image">
+                <img src="/<%= post.author.imageUrl %>" alt="user image" width="120px" height="120px">
+            </div>
+            <div class="card__data">
+                <h3 class="card__header" style="color: #4b5d67;"><%= post.title %></h3>
+                <hr>
+                <p class="card__content"><%= post.content %> </p>
+                <div class="card__footer">
+                    <p>Posted by <%= post.author.name %> on <%= post.date %> </p>
+                </div>
+            </div>
+            <div class="buttons">
+                <form action="/like/<%= post._id %>" method="post">
+                    <div class="ml-5 ui labeled button" tabindex="0">
+                        <button style="border-radius: 8px;" type="submit" class="ui red button">
+                            <i class="heart icon"></i> Like
+                            <p class="ui basic red left pointing label">
+                                <%= post.likes.length %>
+                            </p>
+                        </button>
+                    </div>
+                </form>
+                <form action="/dislike/<%= post._id %>" method="post">
+                    <div class="ml-3 ui labeled button" tabindex="0">
+                        <button style="border-radius: 8px;" class="ui  grey button">
+                            <i class="thumbs down icon"></i> dislike
+                            <p class="ui basic grey left pointing label">
+                                <%= post.dislikes.length %>
+                            </p>
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <div class="commentbox">
+        <form action="/comment/<%= post._id %>" method="POST">
+            <legend id="comment">comment:</legend>
+            <textarea name="comment" id="comment"></textarea>
+            <button class="btn btn-lg btn-outline-primary" type="submit"><i class="far fa-paper-plane"></i></button>
+        </form>
+    </div>
+
+    <div class="commentbox">
+        <% if(post.comment.length>0){ %> 
+        <div class="commentlist">
+            <% post.comment.forEach(c=>{ %>
+                <div class="comment">
+                <h5><%= c.username %> :-</h5>
+                <p><%= c.data %></p>
+                </div>
+            <% }) %> 
+        </div>
+    <% } %> 
+    </div>
+    <%- include('../includes/end'); %>

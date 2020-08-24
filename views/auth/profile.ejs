@@ -1,0 +1,71 @@
+<%- include('../includes/head'); %>
+<link rel="stylesheet" href="/static/profile.css">
+<link rel="stylesheet" href="/static/index.css">
+
+</head>
+
+<body>
+    <%- include('../includes/navbar'); %>
+
+    <div class="centered">
+        <%- include('../includes/flash'); %>
+
+        <div class="row">
+            <div class="col-3">
+                <img src="/<%= usr.imageUrl %>" alt="user image" height="200px" width="200px">
+            </div>
+            <div class="col-9">
+                <h1 class="mid"><%= usr.name%></h1>
+                <p class="mid"><%= usr.email%></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row ">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="user__form">
+                    <form class="email_change" action="/auth/profile/change-email" method="post">
+                        <legend id="email">Change Email:</legend>
+                        <input  type="email" name="email" id="email" value="<%= usr.email %> ">
+                        <input type="hidden" value="<%= usr.email %>" name="oldemail">
+                        <button class="btn  btn-outline-primary"> Change mail</button>
+                    </form>
+                    <form class="image-upload mb-3" action="/auth/profile/image" method="post" enctype="multipart/form-data">
+                        <legend id="image">Change Profile Image:</legend>
+                        <input class="btn btn-outline-secondary" type="file" name="image" id="image">
+                        <button class="btn  btn-outline-primary">Upload image</button>
+                    </form>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+
+    </div>
+
+    <main class="post-container">
+
+        <% if(! post.length==0){ %>
+        <% post.forEach(p=>{ %>
+        <div class="card">
+            <div class="card__data">
+                <h3 class="card__header"><a href=""><%= p.title %> </a></h3>
+                <hr>
+                <p class="card__content"><%= p.content %> </p>
+                <div class="card__footer">
+                    <p>Posted on <%= p.date %> </p>
+                </div>
+                <div class="pl-5  ml-5">
+                    <a class="btn btn-outline-success  mt-1 mb-1 ml-3" href="/update/<%= p._id %>">Edit<i class="ml-3 far fa-edit"></i></a>
+                    <a class="btn btn-outline-danger  mt-1 mb-1 ml-3" href="/delete/<%= p._id %>">Delete<i class="ml-3 fas fa-trash"></i> </a>
+                </div>
+            </div>
+        </div>
+
+
+        <% }) %>
+    </main>
+    <% } %>
+
+
+
+    <%- include('../includes/end'); %>

@@ -1,0 +1,50 @@
+.centered{
+    margin: 7%  20% 2% 20%;
+    background-color:#f5f5f5;
+    /* height: 600px; */
+    border-radius: 8px;
+    box-shadow: 2px 2px 2px 2px #777;
+}
+h1.mid{
+    font-size: 3.5rem;
+    margin:10% 0 0 40%  ;
+}
+p.mid{
+    margin:3% 0 5% 40%  ;
+}
+.col-3 img{
+    border-radius: 100%;
+    margin:10% ;
+}
+.user__form{
+    padding:16px;
+}
+.email_change{
+    margin: 2% 0 5% 0;
+}
+.email_change button{
+    margin-left: 64px;
+}
+.email_change input{
+    border-radius: 8px;
+    width: 60%;
+    border-width: .01px;
+}
+.email_change input:focus{
+    outline-color: #00bcd4;
+    outline-offset: inherit;
+}
+.image-upload input{
+    width: 60%;
+}
+.image-upload button{
+    margin-left: 64px;
+}
+
+legend{
+    font-size: 1.3rem;
+}
+.post-container{
+    /* display: inline-block; */
+    margin: 2% 10% 5% 10%;
+}

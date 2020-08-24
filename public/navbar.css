@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+}
+.navbar{
+    align-content: center;
+    display: flex;
+    background-color: #393e46;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: +1;
+}
+div.navbar__brand{
+    justify-content: flex-start;
+    /* display:inline-flex ; */
+    font-weight: bolder;
+    font-size: 26px;
+    /* font-family: 'Krona One', sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    padding: 20px;
+    margin-left:20px ;
+    vertical-align: middle;
+}
+.navbar__brand a{
+    text-decoration: none;
+    color: #fff;
+}
+div.nav{
+    justify-content: flex-end;
+    text-align: right;
+    vertical-align: middle;
+}
+.navbar__list{
+    list-style: none;
+    margin: 0;
+}
+.navbar__item{
+    display: inline;
+    padding: 20px;
+}
+.navbar__item a{
+    font-size: 1.6rem;
+}
+.navbar__link{
+    text-decoration: none;
+    font-size: 18px;
+    color: #fff;
+}
+.navbar__link:hover{
+    border-bottom: #00adb5 3px solid;
+    color: #00adb5;
+}
+.navbar__brand a:hover{
+    border-bottom: #00adb5 3px solid;
+    color: #00adb5;
+}
+form.navbar__item{
+    margin: 0;
+    padding: 0;
+}
+
+.navbar__item button{
+    border: 0;
+    background-color: inherit;
+}
+.navbar__item button:hover{
+    border-bottom: #00adb5 3px solid;
+    background-color: inherit;
+}

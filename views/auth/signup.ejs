@@ -1,0 +1,53 @@
+<%- include('../includes/head'); %>
+<link rel="stylesheet" href="/static/login.css">
+</head>
+
+<body>
+<%- include('../includes/navbar'); %>
+<main class="main-header">
+    <h2 class="header">Signup</h2><hr>
+    <%- include('../includes/flash'); %>
+    <form action="/auth/signup" method="post" class="form-controll">
+        <div class="form__fild">
+            <label class="form__label" for="name">Name:</label>
+            <input 
+            class="form__input" 
+            type="text" 
+            name="name" 
+            id="name"
+            value=<%= usr.name? usr.name:'' %> 
+            >
+        </div>
+        <div class="form__fild">
+            <label class="form__label" for="email">Email:</label>
+            <input 
+            class="form__input" 
+            type="email"
+            name="email" 
+            id="email" 
+            value=<%= usr.email? usr.email:'' %>       >
+        </div>
+        <div class="form__fild">
+            <label class="form__label" for="password">Password:</label>
+            <input 
+            class="form__input"
+            type="password" 
+            name="password" 
+            id="password"
+            value=<%= usr.password? usr.password:'' %>>
+        </div>
+        <div class="form__fild">
+            <label class="form__label" for="confirm-password">Confirm Password:</label>
+            <input 
+            class="form__input" 
+            type="password" 
+            name="password2" 
+            id="confirm-password"
+            value=<%= usr.password2? usr.password2:'' %> >
+            
+        </div>
+        <button class="btn1" type="submit">Signup</button>
+        <p style="margin-left: 20px; opacity: .7;">Have an account? <a style="opacity: 1;" href="/auth/login/">Log in</a> </p>
+    </form>
+</main>
+    <%- include('../includes/end'); %>

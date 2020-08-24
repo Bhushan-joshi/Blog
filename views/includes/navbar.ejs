@@ -1,0 +1,29 @@
+<nav class="navbar">
+    <div class="navbar__brand">
+        <a href="/">Blog</a>
+    </div>
+    <div class="nav">
+        <ul class="navbar__list">
+            <% if(isauth){ %>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/create"><i class="fas fa-plus"></i></a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/auth/profile"><i class="far fa-user"></i></a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/auth/logout"><i class="fas fa-sign-out-alt"></i></a>
+            </li>
+            <% }else{ %>
+
+            <li class="navbar__item">
+                <a class="navbar__link" href="/auth/login"><i class="fas fa-sign-in-alt"></i></a>
+            </li>
+            <li class="navbar__item">
+                <a class="navbar__link" href="/auth/signup"><i class="fas fa-user-plus"></i></a>
+            </li>
+            <% } %>
+        </ul>
+    </div>
+</nav>
+

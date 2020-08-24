@@ -1,0 +1,25 @@
+<%- include('../includes/head'); %>
+<link rel="stylesheet" href="/static/login.css">
+</head>
+
+<body>
+    <%- include('../includes/navbar'); %>
+    <main class="main-header">
+        <h2 class="header">Login</h2>
+        <hr>
+        <%- include('../includes/flash'); %>
+
+        <form action="/auth/login" method="post" class="form-controll">
+            <div class="form__fild">
+                <label class="form__label" for="email">Email:</label>
+                <input class="form__input" type="email" name="email" id="email">
+            </div>
+            <div class="form__fild">
+                <label class="form__label" for="password">Password:</label>
+                <input class="form__input" type="password" name="password" id="password">
+            </div>
+            <button class="btn1" type="submit">Login<i class="ml-3 fas fa-sign-in-alt"></i></button>
+            <a href="/auth/signup" class="btn btn-lg btn-outline-success" type="submit">Create New Account <i class="ml-3 fas fa-user-plus"></i></a>
+        </form>
+    </main>
+    <%- include('../includes/end'); %>

@@ -1,0 +1,21 @@
+<%- include('../includes/head'); %>
+<link rel="stylesheet" href="/static/create.css">
+</head>
+
+<body>
+<%- include('../includes/navbar'); %>
+    <main class="main-header">
+        <h2 class="header">Create New Post</h2><hr>
+        <form action="/create" method="post" class="form-controll">
+            <div class="form__fild">
+                <label class="form__label" for="title">Title:</label>
+                <input class="form__input" type="text" name="title" id="title">
+            </div>
+            <div class="form__fild">
+                <label class="form__label" for="content">Content:</label>
+                <textarea class="form__input" name="content" id="content"></textarea>
+            <button class="btn" type="submit"><strong>Add <i class=" ml-3 fas fa-plus-circle"></i></strong></button>
+        </form>
+    </main>
+
+<%- include('../includes/end'); %>
